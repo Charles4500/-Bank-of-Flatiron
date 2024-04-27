@@ -1,0 +1,10 @@
+.container{
+  max-width:860px;
+  margin:0 auto;
+}
+
+.card{
+  border-radius: 5px;
+  padding: 10px 20px 30px;
+  margin-top: 50px;
+}
