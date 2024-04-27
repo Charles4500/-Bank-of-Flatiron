@@ -1,42 +1,101 @@
-import './content.css'
+// import './content.css'
 import React, { useState } from 'react';
-import Transaction from '../table/Transaction';
+// import Transaction from '../table/Transaction';
 function Content() {
+  const [formData, setFormData] = useState({ date: '', description: '',category: '',amount: '', });
+  
+  // State to hold table data
+  const [tableData, setTableData] = useState([]);
 
-  const [date, setDate] = useState("")
-  const [description, setDescription] = useState("")
-  const [category, setCategory] = useState("")
-  const [amount, setAmount] = useState("")
-  function handleSubmit(e) {
-    fetch("http://localhost:3000/transactions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        date: date,
-        description: description,
-        category: category,
-        amount: amount,
-      }),
-    });
- 
+  // Function to handle form input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({...formData, [name]: value });
   };
-  return (
-    <div className="ui segment">
-      <form onSubmit={handleSubmit} className="ui form">
-        <div className="inline fields">
-          <input value={date} onChange={(e) => setDate(e.target.value)} type="date" name="date" />
-          <input value={description} onChange={(e) => setDescription(e.target.value)} type="text" name="description" placeholder="Description" />
-          <input value={category} onChange={(e) => setCategory(e.target.value)} type="text" name="category" placeholder="Category" />
-          <input value={amount} onChange={(e) => setAmount(e.target.value)} type="number" name="amount" placeholder="Amount" step="0.01" />
-        </div>
-        <button className="ui button" type="submit">
-          Add Transaction
-        </button>
-      </form>
-    </div>
-  )
-}
 
-export default Content
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add the current form data to the table data
+    setTableData([...tableData, formData]);
+    // Clear the form inputs after submission
+    setFormData({ date: '',description: '', category: '',  name: '' });
+  };
+
+  return (
+    <div>
+     
+      {/* Form component */}
+      <form onSubmit={handleSubmit}>
+        {/* Input for name */}
+        <label>
+        Date:
+          <input
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        {/* Input for email */}
+        <label>
+        Description:
+          <input
+            type="text"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+        Category:
+          <input
+            type="text"
+            name="category"
+            value={formData.category}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+        Amount:
+          <input
+            type="number"
+            name="amount"
+            value={formData.amount}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+       
+        <button type="submit">Add Transaction</button>
+      </form>
+      {/* Table component to display submitted data */}
+      
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* Mapping through the tableData array to render table rows */}
+          {tableData.map((data, index) => (
+            <tr key={index}>
+              <td>{data.date}</td>
+              <td>{data.description}</td>
+              <td>{data.category}</td>
+              <td>{data.amount}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+export default Content;
