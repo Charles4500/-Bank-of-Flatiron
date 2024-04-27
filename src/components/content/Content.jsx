@@ -1,22 +1,22 @@
-
+import './content.css'
 
 function Content() {
   return (
     <div className='content'>
-      <form>
+      <form className='form'>
         Date:
       <input type="date" name="" id="" />
-      </form>
-      <form>
+      </form >
+      <form className='form'>
       <input type="text" />
         </form>
-        <form>
+        <form className='form'>
         <input type="text" />
         </form>
-        <form>
+        <form className='form'>
         <input type="text" />
         </form>
-        <form>
+        <form className='form'>
        <input type="text" />
         </form>
         <button>Add Transaction</button>

@@ -1,3 +1,4 @@
 .search{
- text-align: center;
+  display: grid;
+  margin-bottom: 8px;
 }
