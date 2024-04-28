@@ -1,4 +1,4 @@
-// import './content.css'
+
 import React, { useState } from 'react';
 // import Transaction from '../table/Transaction';
 function Content() {
