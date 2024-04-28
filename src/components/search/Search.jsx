@@ -4,6 +4,8 @@ import './search.css'
 import { SearchIcon } from "@chakra-ui/icons";
 
 function Search() {
+  
+  
   return (
     <div className="search">
 <Input placeholder='Search  Your Recent Transactions' />
