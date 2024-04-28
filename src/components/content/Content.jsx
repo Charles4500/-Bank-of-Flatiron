@@ -1,4 +1,4 @@
-import { FormControl, Input,Table,Thead,Tbody,Tr,Th,Td,TableContainer,InputGroup, } from '@chakra-ui/react';
+import { FormControl, Input,Table,Thead,Tbody,Tr,Th,Td,TableContainer,InputGroup,  } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 function Content() {
@@ -23,6 +23,7 @@ function Content() {
   };
 
   return (
+    
 <FormControl onSubmit={handleSubmit}>
    <form id='input' onSubmit={handleSubmit}>
       <InputGroup>
@@ -93,6 +94,7 @@ function Content() {
 </Table>
 </TableContainer> 
 </FormControl>
+
 );
 }
 export default Content;

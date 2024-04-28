@@ -1,16 +1,22 @@
 import Search from "./components/search/Search";
 import Content from "./components/content/Content";
-import { Container } from '@chakra-ui/react'
+import { Box } from "@chakra-ui/react";
+
 
 
 
 function App() {
   return(
-  <Container>
+  <>
+  <Box>
  <h2 id="header">The Royal Bank of Flatiron</h2>
     <Search />
+
+  
     <Content/>
-    </Container>
+    
+    </Box> 
+    </>
  )
 }
 
