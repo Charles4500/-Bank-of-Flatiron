@@ -5,6 +5,7 @@ import { Box, Heading } from "@chakra-ui/react";
 
 
 
+
 function App() {
   return(
   <>
@@ -15,7 +16,7 @@ function App() {
 
   
     <Content/>
-    
+   
     </Box> 
     </>
  )
