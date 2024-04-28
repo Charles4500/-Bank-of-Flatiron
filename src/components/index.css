@@ -3,25 +3,26 @@
   text-align: center;
 }
 
-input {
-  width: 25% !important;
-  margin-right: 0.25em!important;
-  margin-left: 0.25em!important;
-}
-
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
-
 .App {
   text-align: center;
 }
 
+#input {
+  display: grid;
+}
 
-.App-header {
-  background-color: #222;
+
+
+
+
+
+#header {
+  background-color:#994bd8;
   padding: 20px;
   color: white;
 }

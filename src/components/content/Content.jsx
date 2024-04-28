@@ -23,12 +23,12 @@ function Content() {
   };
 
   return (
-    <div>
+    <div >
      
       {/* Form component */}
-      <form onSubmit={handleSubmit}>
+      <form id='input' onSubmit={handleSubmit}>
         {/* Input for name */}
-        <label>
+        <label id='input'>
         Date:
           <input
             type="date"
@@ -36,10 +36,10 @@ function Content() {
             value={formData.date}
             onChange={handleChange}
           />
-        </label>
+        </label >
         <br />
         {/* Input for email */}
-        <label>
+        <label id='input'>
         Description:
           <input
             type="text"
@@ -49,7 +49,7 @@ function Content() {
           />
         </label>
         <br />
-        <label>
+        <label id='input'>
         Category:
           <input
             type="text"
@@ -59,7 +59,7 @@ function Content() {
           />
         </label>
         <br />
-        <label>
+        <label id='input'>
         Amount:
           <input
             type="number"
@@ -70,11 +70,11 @@ function Content() {
         </label>
         <br />
        
-        <button type="submit">Add Transaction</button>
+        <button id='input' type="submit">Add Transaction</button>
       </form>
       {/* Table component to display submitted data */}
       
-      <table border="1">
+      <table id='input' border='1'>
         <thead>
           <tr>
             <th>Date</th>
