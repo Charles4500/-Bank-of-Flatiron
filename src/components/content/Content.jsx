@@ -1,6 +1,6 @@
 import { FormControl, Input,Table,Thead,Tbody,Tr,Th,Td,TableContainer,InputGroup,  } from '@chakra-ui/react';
 import React, { useState } from 'react';
-
+import './content.css'
 function Content() {
   const [formData, setFormData] = useState({ date: '', description: '',category: '',amount: '', });
   
@@ -23,12 +23,13 @@ function Content() {
   };
 
   return (
-    
+    <div className='form'>
 <FormControl onSubmit={handleSubmit}>
    <form id='input' onSubmit={handleSubmit}>
       <InputGroup>
 
         <Input
+          className='input'
           value={formData.date}
           onChange={handleChange}
           placeholder='Select Date'
@@ -38,6 +39,7 @@ function Content() {
         />
 
         <Input
+          className='input'
           name="description"
           value={formData.description}
           onChange={handleChange}
@@ -46,6 +48,7 @@ function Content() {
         />
             
         <Input
+          className='input'
           name="category"
           value={formData.category}
           onChange={handleChange}
@@ -54,6 +57,7 @@ function Content() {
         />
       
         <Input
+          className='input'
           name="amount"
           value={formData.amount}
           onChange={handleChange}
@@ -66,22 +70,22 @@ function Content() {
       <button id='input' type="submit">Add Transaction</button>
   </form>
   
-<TableContainer>
+<TableContainer className='table'>
 
     <Table variant='simple'>
   
-          <Thead>
-            <Tr>
+          <Thead className='tb'>
+            <Tr >
               <Th>Date</Th>
               <Th>Description</Th>
               <Th>Category</Th>
               <Th>Amount</Th>
             </Tr>
           </Thead>
-<Tbody>
+<Tbody className='tb'>
   
     {tableData.map((data, index) => (
-          <Tr key={index}>
+          <Tr  key={index}>
             <Td>{data.date}</Td>
             <Td>{data.description}</Td>
             <Td>{data.category}</Td>
@@ -94,7 +98,7 @@ function Content() {
 </Table>
 </TableContainer> 
 </FormControl>
-
+</div>
 );
 }
 export default Content;

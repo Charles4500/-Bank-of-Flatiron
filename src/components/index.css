@@ -3,12 +3,17 @@
   text-align: center;
 }
 
+.body{
+  margin: 0;
+  padding: 10px;
+}
 
-
-#header {
+.header {
   background-color:#994bd8;
   padding: 20px;
   color: white;
+  font-size: x-large;
+  border-radius: 10px;
 }
 
 
