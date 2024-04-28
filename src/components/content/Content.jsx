@@ -63,7 +63,7 @@ function Content() {
       </InputGroup>
 
       <button id='input' type="submit">Add Transaction</button>
-    </form>
+  </form>
   
 <TableContainer>
 
