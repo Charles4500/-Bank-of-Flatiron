@@ -1,5 +1,6 @@
-
+import { FormControl, Input,Table,Thead,Tbody,Tr,Th,Td,TableContainer,InputGroup, } from '@chakra-ui/react';
 import React, { useState } from 'react';
+
 function Content() {
   const [formData, setFormData] = useState({ date: '', description: '',category: '',amount: '', });
   
@@ -18,83 +19,80 @@ function Content() {
     // Add the current form data to the table data
     setTableData([...tableData, formData]);
     // Clear the form inputs after submission
-    setFormData({ date: '',description: '', category: '',  name: '' });
+    setFormData({ date: '',description: '', category: '',  amount: '' });
   };
 
   return (
-    <div >
-     
-      {/* Form component */}
-      <form id='input' onSubmit={handleSubmit}>
-        {/* Input for name */}
-        <label id='input'>
-        Date:
-          <input
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-          />
-        </label >
-        <br />
-        {/* Input for email */}
-        <label id='input'>
-        Description:
-          <input
-            type="text"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label id='input'>
-        Category:
-          <input
-            type="text"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label id='input'>
-        Amount:
-          <input
-            type="number"
-            name="amount"
-            value={formData.amount}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-       
-        <button id='input' type="submit">Add Transaction</button>
-      </form>
-      {/* Table component to display submitted data */}
+<FormControl onSubmit={handleSubmit}>
+   <form id='input' onSubmit={handleSubmit}>
+      <InputGroup>
+
+        <Input
+          value={formData.date}
+          onChange={handleChange}
+          placeholder='Select Date'
+          size='sm'
+          name="date"
+          type='date'
+        />
+
+        <Input
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+          placeholder='Description'
+          size='sm'
+        />
+            
+        <Input
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          placeholder='Category'
+          size='sm'
+        />
       
-      <table id='input' border='1'>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* Mapping through the tableData array to render table rows */}
-          {tableData.map((data, index) => (
-            <tr key={index}>
-              <td>{data.date}</td>
-              <td>{data.description}</td>
-              <td>{data.category}</td>
-              <td>{data.amount}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+        <Input
+          name="amount"
+          value={formData.amount}
+          onChange={handleChange}
+          placeholder='Amount'
+          size='sm'
+        />
+      
+      </InputGroup>
+
+      <button id='input' type="submit">Add Transaction</button>
+    </form>
+  
+<TableContainer>
+
+    <Table variant='simple'>
+  
+          <Thead>
+            <Tr>
+              <Th>Date</Th>
+              <Th>Description</Th>
+              <Th>Category</Th>
+              <Th>Amount</Th>
+            </Tr>
+          </Thead>
+<Tbody>
+  
+    {tableData.map((data, index) => (
+          <Tr key={index}>
+            <Td>{data.date}</Td>
+            <Td>{data.description}</Td>
+            <Td>{data.category}</Td>
+            <Td>{data.amount}</Td>
+          </Tr>
+        ))}
+
+</Tbody>
+
+</Table>
+</TableContainer> 
+</FormControl>
+);
 }
 export default Content;

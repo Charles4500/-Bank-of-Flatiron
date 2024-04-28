@@ -1,8 +1,5 @@
-.content{
-  display: flex; 
-  
+.Element{
+  display: flex;
 }
 
-.form{
-  margin-right: 10px
-}
+
