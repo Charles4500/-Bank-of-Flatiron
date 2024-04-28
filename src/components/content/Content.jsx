@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-// import Transaction from '../table/Transaction';
 function Content() {
   const [formData, setFormData] = useState({ date: '', description: '',category: '',amount: '', });
   
