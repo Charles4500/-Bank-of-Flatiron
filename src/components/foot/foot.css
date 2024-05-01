@@ -1,0 +1,47 @@
+.form{
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.input{
+  margin-top: 8px;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-left: 15px;
+}
+#input{
+  margin-top: 6px;
+}
+.table{
+  width: 100%;
+  border-radius: 4px;
+}
+
+.tb{
+  border: 1px solid;
+}
+.btn{
+  background: #000;
+  color: white;
+  font-size: 15px;
+  margin-top: 8px;
+  height: 25px;
+  border-radius: 8px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+.sea{
+  display: flex;
+  width: 100%;
+  border: 1px solid black;
+   margin: 5px 0;
+  height: 40px;
+  border-radius: 10px;
+  padding: 4px;
+  justify-content: space-between;
+}
+

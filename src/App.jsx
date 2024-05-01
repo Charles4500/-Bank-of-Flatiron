@@ -1,9 +1,5 @@
-import Search from "./components/search/Search";
-import Content from "./components/content/Content";
 import { Box, Heading } from "@chakra-ui/react";
-
-
-
+import Foot from "./components/foot/Foot";
 
 
 function App() {
@@ -11,18 +7,17 @@ function App() {
   <>
   <Box className="body">
     <Heading className="header">The Royal Bank of Flatiron</Heading>
- 
-    <Search />
-
-  
-    <Content/>
-   
+   <Foot/>
     </Box> 
     </>
  )
 }
 
 export default App;
+
+
+
+
 
 
 
